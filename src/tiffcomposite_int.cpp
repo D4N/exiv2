@@ -829,7 +829,7 @@ namespace Exiv2 {
 
     TiffComponent* TiffMnEntry::doAddChild(TiffComponent::UniquePtr tiffComponent)
     {
-        TiffComponent* tc = 0;
+        TiffComponent* tc = nullptr;
         if (mn_) {
             tc =  mn_->addChild(std::move(tiffComponent));
         }
@@ -856,12 +856,12 @@ namespace Exiv2 {
 
     TiffComponent* TiffComponent::doAddNext(UniquePtr /*tiffComponent*/)
     {
-        return 0;
+        return nullptr;
     } // TiffComponent::doAddNext
 
     TiffComponent* TiffDirectory::doAddNext(TiffComponent::UniquePtr tiffComponent)
     {
-        TiffComponent* tc = 0;
+        TiffComponent* tc = nullptr;
         if (hasNext_) {
             tc = tiffComponent.release();
             pNext_ = tc;
@@ -871,7 +871,7 @@ namespace Exiv2 {
 
     TiffComponent* TiffMnEntry::doAddNext(TiffComponent::UniquePtr tiffComponent)
     {
-        TiffComponent* tc = 0;
+        TiffComponent* tc = nullptr;
         if (mn_) {
             tc = mn_->addNext(std::move(tiffComponent));
         }
