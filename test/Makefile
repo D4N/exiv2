@@ -113,7 +113,7 @@ test:
 	@if [ -e tmp/test-failed ]; then echo '***' FAILED ; cat tmp/test-failed ; echo '***' ; exit 255; fi
 
 newtests:
-	( cd ../tests ; python3 runner.py --verbose )
+	( cd ../tests ; python3 runner.py --verbose --debug )
 
 testv:
 	@for t in /video ; do \
