@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os.path
-
 import system_tests
 
 
@@ -19,7 +17,7 @@ class OptimizeBinaryArrayElements(metaclass=system_tests.CaseMeta):
         "-M'set Exif.NikonSi02xx.Version 48 50 51 52' "
         "-M'set Exif.NikonSi02xx.ShutterCount 100' $filename",
 
-        "exiv2 -u -pa -u -b $filename"
+        "$exiv2 -u -pa -u -b $filename"
     ]
     stdout = [
         """File 1/1: $filename
